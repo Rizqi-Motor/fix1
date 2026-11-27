@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Resmi Untuk Si Tengil 🩵</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Latar Belakang Dekorasi Melayang -->
+    <div class="floating-bg" id="floatingBg"></div>
+
+    <!-- Audio Latar Belakang (Ganti nama file MP3 di folder music/) -->
+    <audio id="bgMusic" src="music.mpeg" loop preload="auto"></audio>
+
+    <!-- Pemutar Musik Vinyl Minimalis -->
+    <div class="music-widget" id="musicWidget" title="Klik untuk Play/Pause Musik">
+        <div class="vinyl-disc" id="vinylDisc">
+            <div class="vinyl-center">🩵</div>
+        </div>
+        <div class="music-info">
+            <span class="music-status" id="musicStatus">Musik: Siap 🎵</span>
+            <span class="music-hint">Klik untuk Play/Pause</span>
+        </div>
+    </div>
+
+    <!-- TAHAP 1: Amplop Pembuka -->
+    <main class="card" id="step1">
+        <div class="ribbon-top">🦋</div>
+        <div class="mascot-box">
+            <!-- SVG Kelinci Blue Coquette Kawaii -->
+            <svg viewBox="0 0 200 180" class="kawaii-svg bounce">
+                <ellipse cx="70" cy="45" rx="16" ry="42" fill="#fff" stroke="#7cc6fe" stroke-width="4" transform="rotate(-12 70 45)"/>
+                <ellipse cx="70" cy="45" rx="8" ry="30" fill="#bae1ff" transform="rotate(-12 70 45)"/>
+                <ellipse cx="130" cy="45" rx="16" ry="42" fill="#fff" stroke="#7cc6fe" stroke-width="4" transform="rotate(12 130 45)"/>
+                <ellipse cx="130" cy="45" rx="8" ry="30" fill="#bae1ff" transform="rotate(12 130 45)"/>
+                <ellipse cx="100" cy="115" rx="65" ry="52" fill="#fff" stroke="#7cc6fe" stroke-width="4"/>
+                <!-- Pipi merona biru pastel / soft blush -->
+                <circle cx="65" cy="122" r="10" fill="#a2d2ff" opacity="0.7"/>
+                <circle cx="135" cy="122" r="10" fill="#a2d2ff" opacity="0.7"/>
+                <circle cx="78" cy="108" r="6" fill="#2c4966"/>
+                <circle cx="80" cy="106" r="2" fill="#fff"/>
+                <circle cx="122" cy="108" r="6" fill="#2c4966"/>
+                <circle cx="124" cy="106" r="2" fill="#fff"/>
+                <path d="M93 118 Q100 125 107 118" fill="none" stroke="#2c4966" stroke-width="3" stroke-linecap="round"/>
+                <polygon points="100,113 96,117 104,117" fill="#38a3ff"/>
+                <!-- Pita Biru Muda di Telinga -->
+                <path d="M135 65 L120 55 L120 75 Z" fill="#38a3ff"/>
+                <path d="M135 65 L150 55 L150 75 Z" fill="#38a3ff"/>
+                <circle cx="135" cy="65" r="5" fill="#bae1ff"/>
+            </svg>
+        </div>
+
+        <span class="badge">💌 Peringatan Tingkat Tinggi</span>
+        <h1>Halooo Dini Nurmala ❄️</h1>
+        <p>
+            Sistem mendeteksi ada makhluk paling lucuu tapi tengill lagi buka link ini. 
+            Siapin mental dan nyalain volume HP kamu ya! oh ya warna ini terinspirasi dari warna favorit kamu karena sebelumnya kamu pernah cerita warna favorit kamu warna biru xixixixixixixi
+        </p>
+
+        <button class="btn btn-primary" onclick="startJourney()">
+            Buka Suratnya ✨
+        </button>
+    </main>
+
+    <!-- TAHAP 2: Syarat & Tengil Meter -->
+    <section class="card hidden" id="step2">
+        <div class="ribbon-top">🫐</div>
+        <h2>Cek Fakta Dulu Ya! 📋</h2>
+        <p class="subtitle">Centang semua kenyataan di bawah ini sebelum lanjut:</p>
+
+        <div class="checklist">
+            <label class="check-item" onclick="playPop()">
+                <input type="checkbox" id="chk1" checked onchange="preventUncheck(this, 'Jangan bohong, emang tengil kok 😜')">
+                <span>Aku ngaku kalau aku orangnya tengil & ngeselin.</span>
+            </label>
+            <label class="check-item" onclick="playPop()">
+                <input type="checkbox" id="chk2" checked onchange="preventUncheck(this, 'Eits, gak bisa di-uncheck, fakta mutlak! ✨')">
+                <span>Walau tengil, aku tetep cantik & lucuu maksimal.</span>
+            </label>
+            <label class="check-item" onclick="playPop()">
+                <input type="checkbox" id="chk3" checked onchange="preventUncheck(this, 'Gak usah malu-malu kucing gitu deh 🤭')">
+                <span>Sebenernya aku sering senyum-senyum sendiri pas chat sama kamu.</span>
+            </label>
+        </div>
+
+        <div class="meter-box">
+            <div class="meter-header">
+                <span>Tingkat Ketengilan Kamu:</span>
+                <span id="meterValue">100%</span>
+            </div>
+            <div class="meter-bar">
+                <div class="meter-fill" id="meterFill"></div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="goToStep3()">
+            Lanjut ke Inti Surat ➔
+        </button>
+    </section>
+
+    <!-- TAHAP 3: Tembak Interaktif -->
+    <section class="card hidden" id="step3">
+        <div class="ribbon-top">🩵</div>
+        <div class="mascot-box" id="reactionMascot">
+            <!-- Maskot Beruang Memohon Bawa Hati Biru -->
+            <svg viewBox="0 0 200 170" class="kawaii-svg">
+                <circle cx="55" cy="55" r="22" fill="#d9a077" stroke="#8c583a" stroke-width="4"/>
+                <circle cx="55" cy="55" r="11" fill="#f5cbb0"/>
+                <circle cx="145" cy="55" r="22" fill="#d9a077" stroke="#8c583a" stroke-width="4"/>
+                <circle cx="145" cy="55" r="11" fill="#f5cbb0"/>
+                <ellipse cx="100" cy="105" rx="62" ry="52" fill="#d9a077" stroke="#8c583a" stroke-width="4"/>
+                <ellipse cx="100" cy="115" rx="24" ry="18" fill="#f2f9ff"/>
+                <circle cx="75" cy="95" r="7" fill="#3d2518"/>
+                <circle cx="77" cy="92" r="2.5" fill="#fff"/>
+                <circle cx="125" cy="95" r="7" fill="#3d2518"/>
+                <circle cx="127" cy="92" r="2.5" fill="#fff"/>
+                <circle cx="60" cy="108" r="9" fill="#90ccf4" opacity="0.7"/>
+                <circle cx="140" cy="108" r="9" fill="#90ccf4" opacity="0.7"/>
+                <ellipse cx="100" cy="109" rx="6" ry="4" fill="#3d2518"/>
+                <path d="M92 118 Q100 124 108 118" fill="none" stroke="#3d2518" stroke-width="3" stroke-linecap="round"/>
+                <path d="M100 142 C100 142 82 130 82 120 C82 114 90 112 100 120 C110 112 118 114 118 120 C118 130 100 142 100 142 Z" fill="#38a3ff"/>
+            </svg>
+        </div>
+
+        <h2 id="proposalTitle">Jadi Gini Yaaaa... ☁️</h2>
+        <p id="proposalText">
+            Capek tau liatin tingkah lucuu kamu dari jauh terus. Mending kita resmiin aja biar aku bisa jagain sekaligus ngadepin tingkah lucuu kamu tiap hari.<br><br>
+            <strong>Mau nggak jadi pacar aku? 🥺👉👈</strong>
+        </p>
+
+        <div class="btn-group">
+            <button class="btn btn-yes" id="yesBtn" onclick="acceptProposal()">
+                Mau Banget! 🩵
+            </button>
+            <button class="btn btn-no" id="noBtn" onclick="handleNoClick()">
+                Gak Mau 😛
+            </button>
+        </div>
+    </section>
+
+    <!-- TAHAP 4: Sertifikat Resmi Jadian -->
+    <section class="card hidden" id="step4">
+        <div class="ribbon-top">👑</div>
+        <span class="badge">✨ OFFICIAL COUPLE ✨</span>
+        <h1>Yeay! Sah Jadi Pacarku! 🎉</h1>
+        <p>
+            No refund, no cancel, no tengil-tengil kabur lagi! Mulai detik ini kamu resmi jadi milikku seutuhnya. 🥰
+        </p>
+
+        <div class="certificate">
+            <div class="cert-title">📜 SERTIFIKAT PENAKLUKAN TUAN PUTRI</div>
+            <div class="cert-body">
+                Diberikan kepada:<br>
+                <strong>Si Paling Lucuu & Cantik Sedunia</strong><br>
+                Aku tau kamu itu orangnya apa apa bisa sendiri tapi kali ini akuu temenin yaaa💗<br>
+            </div>
+        </div>
+
+        <p class="ss-hint">Screenshot halaman ini & kirim ke WhatsApp aku sekarang! 💌</p>
+    </section>
+
+    <!-- Toast Notifikasi Lucu -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
